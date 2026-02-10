@@ -1,0 +1,4 @@
+# this makes clangd shut up about flags cmake gives to gcc
+CompileFlags:
+  Remove:
+    - -mno-direct-extern-access

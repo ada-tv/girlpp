@@ -3,16 +3,37 @@
 
 #include <QApplication>
 #include <QMainWindow>
+#include <QMenuBar>
+#include <QHBoxLayout>
+#include <QTreeView>
 
 namespace girlpp {
 
 class MainWindow : public QMainWindow {
+private:
+    QTreeView* m_TreeView;
+public:
+    MainWindow() : QMainWindow() {
 
+        menuBar()->addMenu("File");
+
+        auto* widget = new QWidget(this);
+        auto* hbox = new QHBoxLayout(widget);
+
+        m_TreeView = new QTreeView(widget);
+
+        hbox->addWidget(m_TreeView);
+
+        setCentralWidget(widget);
+        widget->show();
+    }
+
+    ~MainWindow() = default;
 };
 
 class Application : public QApplication {
 private:
-    QMainWindow m_MainWindow;
+    MainWindow m_MainWindow;
     static constexpr const char* m_Version = GIRLPP_VERSION;
     static constexpr int m_VersionMajor = GIRLPP_VERSION_MAJOR;
     static constexpr int m_VersionMinor = GIRLPP_VERSION_MINOR;

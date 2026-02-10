@@ -3,14 +3,14 @@
 #include <QRunnable>
 
 #include "stanza_stream.hpp"
+#include "application.hpp"
 
 using namespace girlpp;
 
-int main(int argc, char *argv[]) {
-    QCoreApplication::setOrganizationDomain("thingvellir.net");
-    QCoreApplication::setApplicationName("girlpp");
-    QCoreApplication app(argc, argv);
+int main(int argc, char** argv) {
+    Application app(argc, argv);
 
+#if 0
     auto stream = StanzaStream(Jid {
         .local = "ada",
         .domain = "thingvellir.net",
@@ -29,6 +29,7 @@ int main(int argc, char *argv[]) {
 
         stream.write(msg);
     });
+#endif
 
     return app.exec();
 }

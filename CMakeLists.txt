@@ -16,6 +16,13 @@ qt_add_executable(girlpp
     src/stanza_stream.cpp
 )
 
+target_compile_definitions(girlpp PRIVATE
+    GIRLPP_VERSION=$<QUOTE>${PROJECT_VERSION}$<QUOTE>
+    GIRLPP_VERSION_MAJOR=${PROJECT_VERSION_MAJOR}
+    GIRLPP_VERSION_MINOR=${PROJECT_VERSION_MINOR}
+    GIRLPP_VERSION_PATCH=${PROJECT_VERSION_PATCH}
+)
+
 target_link_libraries(girlpp PRIVATE
     Qt6::Core Qt6::Gui Qt6::Widgets Qt6::Network
 )

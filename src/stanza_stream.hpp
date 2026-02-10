@@ -16,7 +16,7 @@ struct Stanza {
 };
 
 struct MessageStanza : public Stanza {
-    enum Type {
+    enum class Type {
         Error,
         Chat,
         GroupChat, // invalid to actually use?
@@ -25,7 +25,7 @@ struct MessageStanza : public Stanza {
     };
 
     std::optional<QString> id;
-    Type type { Normal };
+    Type type { Type::Normal };
     Jid from;
     std::optional<Jid> to { std::nullopt };
     QString body;
@@ -37,7 +37,7 @@ struct MessageStanza : public Stanza {
 };
 
 struct PresenceStanza : public Stanza {
-    enum Type {
+    enum class Type {
         Error,
         Probe,
         Subscribe,
@@ -47,7 +47,7 @@ struct PresenceStanza : public Stanza {
         Unsubscribed,
     };
 
-    enum Show {
+    enum class Show {
         DoNotDisturb,
         ExtendedAway,
         Away,
@@ -66,7 +66,7 @@ struct PresenceStanza : public Stanza {
 };
 
 struct InfoQueryStanza : public Stanza {
-    enum Type {
+    enum class Type {
         Result,
         Error,
         Get,

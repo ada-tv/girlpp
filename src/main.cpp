@@ -3,9 +3,10 @@
 #include <QRunnable>
 
 #include "stanza_stream.hpp"
-#include "application.hpp"
+#include "ui/application.hpp"
 
 using namespace girlpp;
+using namespace girlpp::ui;
 
 int main(int argc, char** argv) {
     Application app(argc, argv);

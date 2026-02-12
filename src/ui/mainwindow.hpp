@@ -1,5 +1,5 @@
-#ifndef girlpp_mainwindow_hpp
-#define girlpp_mainwindow_hpp
+#ifndef girlpp_ui_mainwindow_hpp
+#define girlpp_ui_mainwindow_hpp
 
 #include <QApplication>
 #include <QMainWindow>
@@ -7,7 +7,7 @@
 #include <QHBoxLayout>
 #include <QTreeView>
 
-namespace girlpp {
+namespace girlpp::ui {
 
 class MainWindow : public QMainWindow {
 private:
@@ -32,4 +32,4 @@ public:
 };
 
 }
-#endif // girlpp_mainwindow_hpp
+#endif // girlpp_ui_mainwindow_hpp

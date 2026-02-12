@@ -1,5 +1,5 @@
-#ifndef girlpp_application_hpp
-#define girlpp_application_hpp
+#ifndef girlpp_ui_application_hpp
+#define girlpp_ui_application_hpp
 
 #include <QApplication>
 #include <QMainWindow>
@@ -9,7 +9,7 @@
 
 #include "mainwindow.hpp"
 
-namespace girlpp {
+namespace girlpp::ui {
 
 class Application : public QApplication {
 private:
@@ -44,4 +44,4 @@ public:
 };
 
 }
-#endif // girlpp_application_hpp
+#endif // girlpp_ui_application_hpp

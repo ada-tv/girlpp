@@ -14,6 +14,8 @@ qt_add_executable(girlpp
     src/main.cpp
     src/jid.cpp
     src/stanza_stream.cpp
+    src/ui/application.cpp
+    src/ui/mainwindow.cpp
 )
 
 target_compile_definitions(girlpp PRIVATE

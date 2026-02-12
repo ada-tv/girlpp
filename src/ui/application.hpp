@@ -19,28 +19,11 @@ private:
     static constexpr int m_VersionMinor = GIRLPP_VERSION_MINOR;
     static constexpr int m_VersionPatch = GIRLPP_VERSION_PATCH;
 public:
-    Application(int& argc, char** argv) : QApplication(argc, argv) {
-        QCoreApplication::setOrganizationDomain("thingvellir.net");
-        QCoreApplication::setApplicationName("girlpp");
-        QCoreApplication::setApplicationVersion( m_Version );
-        SetMainWindowTitle("girlpp");
-        SetMainWindowSize(640, 480);
-        SetMainWindowVisible();
-    }
-
+    Application(int& argc, char** argv);
     ~Application() = default;
-
-    void SetMainWindowTitle(const QString& title) {
-        m_MainWindow.setWindowTitle(title);
-    }
-
-    void SetMainWindowSize(int w, int h) {
-        m_MainWindow.resize(w, h);
-    }
-
-    void SetMainWindowVisible() {
-        m_MainWindow.show();
-    }
+    void SetMainWindowTitle(const QString& title);
+    void SetMainWindowSize(int w, int h);
+    void SetMainWindowVisible();
 };
 
 }
